@@ -24,7 +24,10 @@ namespace BinarySearchTree
             bst.Insert(67);
             bst.Insert(6);
             bst.Display();
+            Console.WriteLine("------------------");
             bst.GetSize();
+            string res = bst.SearchBst(bst, 51) ? "Found" : "Not Found" ;
+            Console.WriteLine(res) ;
         }
     }
 }

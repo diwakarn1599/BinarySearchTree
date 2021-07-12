@@ -17,7 +17,7 @@ namespace BinarySearchTree
             this.rightTree = null;
         }
         int leftCount = 0, rightCount = 0;
-       
+        bool res;
 
         //methid to insert element into bst
         public void Insert(T item)
@@ -71,6 +71,30 @@ namespace BinarySearchTree
         public void GetSize()
         {
             Console.WriteLine($"Size = {this.leftCount+this.rightCount+1}");
+        }
+
+        //search element in bst
+        public bool SearchBst(BinarySearchTree<T> node, T val)
+        {
+            if (node == null)
+            {
+                return false;
+            }
+            if (node.data.Equals(val))
+            { 
+                res = true;
+
+            }
+            if (val.CompareTo(node.data) < 0)
+            {
+                SearchBst(node.leftTree,val);
+            }
+            if (val.CompareTo(node.data) > 0)
+            {
+                SearchBst(node.rightTree,val);
+            }
+
+            return res;
         }
 
     }
